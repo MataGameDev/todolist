@@ -1,0 +1,25 @@
+.Home
+{
+    margin: 0 auto;
+    width: 100%;
+}
+
+.Home h1{
+    font-size: 32px;
+    color: crimson;
+}
+
+.Home p{
+    color: crimson;
+    text-align: center;
+}
+
+.Home a{
+    color:blueviolet;
+    text-decoration: none;
+}
+
+.Home a:hover
+{
+    color: lightcoral;
+}
