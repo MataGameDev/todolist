@@ -1,8 +1,9 @@
-
 import React, { Component } from 'react';
 import {v4 as uuidv4} from 'uuid';
+import List from './List';
 
 class Todo extends Component {
+    
     constructor(){
         super();
 
@@ -56,7 +57,31 @@ class Todo extends Component {
         }
     }
 
+    markAsCompleted = id =>{
+        const {items} = this.state;
 
+        const foundTask = this.state.items.find(
+            item => item.id === id
+        );
+
+        foundTask.complete = true;
+
+        this.setState({
+            items:{
+                ...this.state.items,
+            }
+        })
+    }
+    removeTask = id =>{
+        const {items} = this.state;
+        const filtereditems = items.filter(
+            item => item.id !== id
+        )
+        console.log(filtereditems);
+        this.setState({
+            items: filtereditems,
+        })
+    }
     render() {
         console.log(this.state.items);
         //console.log(this.state.task);
@@ -71,19 +96,11 @@ class Todo extends Component {
                         onChange = {this.handleOnChange}
                     />
                 </form>
-                <ul>
-                    {
-                        this.state.items.map( (item) => (
-                            <li>
-                                {item.task}
-                                <div>
-                                    <span>Icono Check</span>
-                                    <span>icono Basurero</span>
-                                </div>
-                            </li>
-                        ))
-                    }
-                </ul>
+                <List 
+                    items ={this.state.items} 
+                    markAsCompleted = {this.markAsCompleted}
+                    removeTask = {this.removeTask}
+                />
             </div>
         );
     }
