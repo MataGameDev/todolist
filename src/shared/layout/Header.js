@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import logo from '../images/logo.svg';
@@ -20,7 +19,6 @@ const Header = (props) => {
 Header.PropTypes ={
     title: PropTypes.string.isRequired,
     url: PropTypes.string,
- 
 }
 
 export default Header;
