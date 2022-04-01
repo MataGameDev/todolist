@@ -10,7 +10,6 @@ function App() {
     <div className="App">
       <Header title="Header" url="https://github.com/"/>
       <Content >
-        {/*<Home />*/}
         <Todo/>
       </Content>
       <Footer />

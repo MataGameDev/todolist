@@ -1,14 +1,17 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const footer = (props) => {   
-    const root ={
-        marginTop: '20px',
-    }
+const Content = ({children}) => {
+    
     return (
-        <footer style={root}>
-            &copy; web2 {new Date().getFullYear}
-        </footer>
-        );
+        <main>
+            {children}
+        </main>
+    );
+    
 }
 
-export default footer;
+Content.propTypes = {
+    children: PropTypes.element.isRequired
+}
+export default Content;
