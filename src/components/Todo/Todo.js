@@ -87,9 +87,25 @@ class Todo extends Component {
             items: filteredItems,
                     
         })
-
-
     }
+
+    ReDoTask = id =>{
+        const {items} = this.state;
+
+        const foundTask = items.find(
+            item => item.id === id
+        );
+
+        foundTask.complete = false;
+
+        this.setState({
+            items: [
+                ...this.state.items,
+            ]
+        })
+    }
+
+
     render() {
 
         console.log(this.state.items);
@@ -110,6 +126,7 @@ class Todo extends Component {
                     items = {this.state.items}
                     markAsCompleted = {this.markAsCompleted}
                     removeTask = {this.removeTask}
+                    ReDoTask = {this.ReDoTask}
                 />
                 
             </div>
