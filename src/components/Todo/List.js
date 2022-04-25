@@ -18,7 +18,7 @@ const List = props => {
                         
                         <div className = 'actions'>
                             <span
-                                className ={item.complete ? 'complete' :'pending'}
+                                className ={item.complete ? 'repite' :'hide'}
                                 onClick = {() =>ReDoTask(item.id)}
                             >
                                 <i class="fa fa-repeat" aria-hidden="true"></i>

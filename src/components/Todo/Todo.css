@@ -50,6 +50,11 @@
     display:block;
 }
 
+.Todo ul li .repite{
+    color: rgb(255, 196, 0);
+    display:block;
+}
+
 .Todo ul li .trash{
     color :red;
     display:block
