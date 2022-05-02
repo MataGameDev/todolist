@@ -4,7 +4,6 @@ import './Timer.css';
 class Timer extends Component {
     constructor(){
         super();
-
         this.state = {
             alert:{
                 type:'',
@@ -12,16 +11,11 @@ class Timer extends Component {
             },
             time: 0
         };
-
         this.times = {
             defaultTime: 1500, //25 min
             shortBreak: 300, //5 min
             longBreak: 900, //15 min
         }
-
-
-
-
     }
 
     componentDidMount(){
@@ -30,7 +24,7 @@ class Timer extends Component {
     }
 
     setDefaultTime(){
-        this.state({
+        this.setState({
             time: this.times.defaultTime
         })
     }
@@ -42,6 +36,7 @@ class Timer extends Component {
                 message:'WORKING!!!'
             }
         })
+        this.setTime(this.times.defaultTime);
     }
     setTimeForShortBreak = () =>{
         this.setState({
@@ -50,6 +45,7 @@ class Timer extends Component {
                 message:'Taking a Break!!!'
             }
         })
+        this.setTime(this.times.shortBreak);
     }
     setTimeForLongBreak = () =>{
         this.setState({
@@ -58,7 +54,46 @@ class Timer extends Component {
                 message:'Taking the day off!!!'
             }
         })
+        this.setTime(this.times.longBreak);
     }
+    setTime = (newTime) =>{
+        this.restartInterval();
+        this.setState({
+            time: newTime,
+
+        })
+    }
+    restartInterval = () =>{
+        clearInterval(this.interval);
+
+        this.interval = setInterval(this.countDown,1000)
+
+
+    }
+    countDown = () =>{
+        if(this.state.time === 0){
+            this.setState({
+                alert:{
+                    type: 'Beep',
+                    message: 'Beeeeeeeeep',
+                }
+            })
+        }else{
+            this.setState({
+                time: this.state.time - 1,
+                
+            });
+        }
+    }
+
+    displayTimer(Time) {
+        let minute = Math.floor((Time / 60) % 60);
+        minute = (minute < 10)? '0' + minute : minute;
+        let second = Time % 60;
+        second = (second < 10)? '0' + second : second;
+        return `${minute}:${second}`
+    }
+    
 
     render(){
         const {alert: {message,type}, time} =this.state;
@@ -69,8 +104,7 @@ class Timer extends Component {
                 </div>
 
                 <div className = "timer">
-                    el Temporizador muestra el tiempo en Minutos
-                    de la forma 00:00
+                    {this.displayTimer(time)}
                 </div>
 
                 <div className ="types">
@@ -82,13 +116,13 @@ class Timer extends Component {
                     </button>
                     <button
                         className = "short"
-                        /*onClick = {(correr cuenta regresiva de 5 min) =>}*/
+                        onClick = {this.setTimeForShortBreak}
                     >
                         Short Break
                     </button>
                     <button
                         className = "long"
-                        /*onClick = {(correr cuenta regresiva de 15 min) =>}*/
+                        onClick = {this.setTimeForLongBreak}
                     >
                         Long Break
                     </button>
