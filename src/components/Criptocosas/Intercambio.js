@@ -40,7 +40,6 @@ handleOnClick = () =>{
         clase = "Error";
 
     }
-
     this.setState({
         coins: intercambio,
         message: texto,
