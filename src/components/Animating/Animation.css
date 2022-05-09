@@ -1,0 +1,23 @@
+.Animation {
+    background-color: yellow;
+    text-align: center;
+    margin-top: 1rem;
+    margin-left: 4rem;
+    margin-right: 4rem;
+    margin-bottom: 1rem;
+}
+
+.Animation .transition {
+    transition: all 1.5s ease 0s;
+    color: black;
+    padding-bottom : 1rem;
+}
+
+.Animation .transition.show {
+    padding-bottom: 15rem;
+    background-color: red;
+    margin-top: 2rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-bottom: 2rem;
+}
