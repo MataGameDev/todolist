@@ -1,0 +1,71 @@
+.Numbers {
+    justify-content:center;
+    padding: 30px;
+    font-size: 30px;
+    align-items: center;
+    background-color: #00FF33;
+}
+
+.Numbers input[type=number]::-webkit-inner-spin-button
+{
+    justify-content:center;
+    -webkit-appearance: none;
+    margin: 0;
+    background-color: #00FF33;
+}
+
+.Numbers input {
+    justify-content:center;
+    width: 500px;
+    height: 60px;
+    font-size: 20px;
+    color:yellow;
+    background-color: #FF00FF;
+    outline: none;
+    border: 1px solid ;
+    padding: 10px;
+    border-top: 1px solid purple;
+    border-left: 1px solid gold;
+    border-right: 1px solid gold;
+    border-bottom: 1px solid purple;
+    padding: 10px;
+    
+}
+
+.Numbers ul {
+    justify-content:center;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+    background-color: #00FF33;
+    width: 522px;
+    color:yellow;
+}
+
+.Numbers ul li {
+    justify-content:center;
+    border-top: 1px solid purple;
+    border-left: 1px solid gold;
+    border-right: 1px solid gold;
+    border-bottom: 1px solid purple;
+    padding: 10px;
+    background-color:#FF00FF;
+    color:yellow;
+}
+
+.Numbers ul li:first-child {
+    justify-content:center;
+    width: 158;
+    height: 175;
+    border-top-left-radius:8;
+    border-top-right-radius:8;
+    background-color: #FF00CC;
+    color:yellow;
+}
+
+.Numbers ul li:last-child {
+    justify-content:center;
+    border-bottom: 1px solid burlywood;
+    background-color:#FF00CC;
+    color:yellow;
+}
