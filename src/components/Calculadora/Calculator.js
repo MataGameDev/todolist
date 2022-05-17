@@ -56,14 +56,14 @@ class Calculator extends Component {
     render() {
         const { number1, number2, resultado, operacion } = this.state;
         return ( 
-            <div>
-                <input Name="input"
+            <div className="Background" >
+                <input className="Input"
                     type = "text"
                     value = {number1}
                     onChange = {this.handleNumberChange1}
                 />
                 <form>
-                    <label>
+                    <label className="Label">
                         <select value ={operacion} onChange={this.handleChangeOperacion}>
                             <option value="void">↓</option>
                             <option value = "+"> + </option>
@@ -73,13 +73,15 @@ class Calculator extends Component {
                         </select>
                     </label>
                 </form>
-                <input 
+                <input className="Input2"
                     type = "text"
                     value = {number2}
                     onChange = {this.handleNumberChange2}
                 />
-                <h3>Resultado: {resultado}</h3>
-                <button onClick={this.handleOnClick}>Calcular</button>
+                <div>
+                    <p className="Resultados">Resultado: {resultado}</p>
+                    <button onClick={this.handleOnClick} className="Resultado">Calcular</button>
+                </div>
             </div>
         )
     }
