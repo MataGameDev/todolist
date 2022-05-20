@@ -4,46 +4,44 @@ class Calculator extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            number1: '',
-            number2: '',
-            resultado: '',
-            operacion: ''
+            number1: '',number2: '',resultado: '', operacion: ''
         }
     }
+    /*
+    handleOnChange = e = {
+        const {target: {value,name,type}} = e;
+        const val = type === 'text' ? Number(value) :true;
+        this.setState({
+            [name]:val
+        })
+    }
+
+    handleResult = e =>{
+        const{number1,number2,selector} = this.state;
+        this.setState({
+            result:calculateResult(number1,number2,selector)
+        })
+    }
+
+    */
     handleOnClick = () => {
         const num1 = this.state.number1;
         const num2 = this.state.number2;
         const operacion = this.state.operacion;
         let resultados;
-        if (operacion === '+') {
-            resultados = num1 + num2;
-        } else if (operacion === '-') {
-            resultados = num1 - num2;
-        } else if (operacion === '*') {
-            resultados = num1 * num2;
-        } else if (operacion === '/') {
-            resultados = num1 / num2;
-        }
-        this.setState({
-            resultado: resultados
-        })
+        if (operacion === '+') {resultados = num1 + num2;} 
+        else if (operacion === '-') {resultados = num1 - num2;} 
+        else if (operacion === '*') {resultados = num1 * num2;} 
+        else if (operacion === '/') {resultados = num1 / num2;}
+        this.setState({resultado: resultados.toFixed(2)})
     }
     handleNumberChange1 = e => {
-        if (e.keyCode === 13) {
-            e.preventDefault();
-        }
-        this.setState({
-            number1: Number(e.target.value)
-        });
+        if (e.keyCode === 13) {e.preventDefault();}
+        this.setState({number1: Number(e.target.value)});
     }
     handleNumberChange2 = e => {
-
-        if (e.keyCode === 13) {
-            e.preventDefault();
-        }
-        this.setState({
-            number2: Number(e.target.value)
-        });
+        if (e.keyCode === 13) {e.preventDefault();}
+        this.setState({number2: Number(e.target.value)});
     }
     handleChangeOperacion = e => {
         const { target: { value } } = e;
