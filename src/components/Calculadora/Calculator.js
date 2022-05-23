@@ -15,14 +15,12 @@ class Calculator extends Component {
             [name]:val
         })
     }
-
     handleResult = e =>{
         const{number1,number2,selector} = this.state;
         this.setState({
             result:calculateResult(number1,number2,selector)
         })
     }
-
     */
     handleOnClick = () => {
         const num1 = this.state.number1;
