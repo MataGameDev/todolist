@@ -10,6 +10,7 @@ import Content from '../shared/layout/Content';
 //import 7 Actividad Numbers from './PureComponent/Numbers';
 //import Calculator from './Calculadora/Calculator';
 import Person from './Forms/Person';
+import Popup from 'react-popup';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Content >
         <Person/>
       </Content>
+      <Popup/>
       <Footer />
     </div>
   );
